@@ -23,6 +23,10 @@ var getArtist = function(name) {
     limit: 1,
     type: 'artist'
 };
-    getFromApi(search, query);
-    
+    getFromApi('search', query).then((item) => {
+        artist = item.artists.items[0];
+
+    });
+    return artist;
 };
+getArtist();
