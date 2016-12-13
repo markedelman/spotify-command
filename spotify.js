@@ -18,4 +18,11 @@ var getFromApi = function(endpoint, query) {
 var artist;
 var getArtist = function(name) {
     // Edit me!
+    var query = {
+    q: name,
+    limit: 1,
+    type: 'artist'
+};
+    getFromApi(search, query);
+    
 };
