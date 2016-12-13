@@ -19,14 +19,14 @@ var artist;
 var getArtist = function(name) {
     // Edit me!
     var query = {
-    q: name,
-    limit: 1,
-    type: 'artist'
-};
-    getFromApi('search', query).then((item) => {
-        artist = item.artists.items[0];
+        q: name,
+        limit: 1,
+        type: 'artist'
+    };
 
+    let promise =  getFromApi('search', query).then((item) => {
+        artist = item.artists.items[0];
+        return artist;
     });
-    return artist;
+    return promise;
 };
-getArtist();
